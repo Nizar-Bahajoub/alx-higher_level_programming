@@ -9,12 +9,12 @@
 
 int check_cycle(listint_t *list)
 {
-	const listint_t *current, *previous;
+	listint_t *current = list;
+	listint_t *previous = list;
 
-	current = list;
-	previous = list;
-
-	while (current && previous && list)
+	if (list == NULL)
+		return (0);
+	while (current && previous && current->next)
 	{
 		previous = previous->next;
 		current = current->next->next;
