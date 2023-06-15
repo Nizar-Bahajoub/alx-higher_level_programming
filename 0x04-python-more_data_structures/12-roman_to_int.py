@@ -10,4 +10,5 @@ def roman_to_int(roman_string):
                 total -= rom[roman_string[i]]
             else:
                 total += rom[roman_string[i]]
+        total += rom[roman_string[-1]]
         return (total)
