@@ -61,8 +61,9 @@ class Square:
 
     def __str__(self):
         my_list = []
-        if self.__position[1] > 0:
+        if self.__position[1] > 0 and self.__size != 0:
             my_list.append('\n' * (self.__position[1] - 1))
-        for i in range(self.__size):
-            my_list.append(" " * self.__position[0] + "#" * self.__size)
+        if self.__size > 0:
+            for i in range(self.__size):
+                my_list.append(" " * self.__position[0] + "#" * self.__size)
         return ('\n'.join(my_list))
