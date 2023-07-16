@@ -15,5 +15,5 @@ def add_attribute(obje, attri, val):
     """
 
     if not hasattr(obje, "__dict__"):
-        raise TypeError("can't add any attribute")
+        raise TypeError("can't add new attribute")
     setattr(obje, attri, val)
