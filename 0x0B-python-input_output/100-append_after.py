@@ -3,6 +3,7 @@
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """adds a string in a specified position"""
     new_txt = ""
     with open(filename) as f:
         for i in f:
