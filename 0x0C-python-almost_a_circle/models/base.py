@@ -9,7 +9,7 @@ class Base:
         nb_objects (private): the number of objects
     """
     __nb_objects = 0
-    
+
     def __init__(self, id=None):
         """initialization"""
         if id is not None:
