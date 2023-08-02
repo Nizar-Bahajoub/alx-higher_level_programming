@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base Class"""
 import json
+import os.path
 
 
 class Base:
@@ -66,7 +67,7 @@ class Base:
         filename = "{}.json".format(cls.__name__)
 
         if os.path.exists(filename) is False:
-            return []
+            return ([])
 
         with open(filename, 'r') as f:
             list_str = f.read()
@@ -77,4 +78,4 @@ class Base:
         for index in range(len(list_cls)):
             list_ins.append(cls.create(**list_cls[index]))
 
-        return list_ins
+        return (list_ins)
