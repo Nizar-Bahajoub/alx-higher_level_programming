@@ -94,3 +94,13 @@ class Rectangle(Base):
         my_str += "/" + str(self.__y)
         my_str += " - " + str(self.__width) + "/" + str(self.__height)
         return (my_str)
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        if args is not None and len(args) is not 0:
+            attr = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, attr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
