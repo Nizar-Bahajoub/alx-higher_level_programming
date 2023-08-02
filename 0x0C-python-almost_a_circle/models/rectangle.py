@@ -71,15 +71,18 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """area"""
         return (self.__width * self.__height)
 
     def display(self):
+        """print the rectangle"""
         for i in range(self.__height):
             for j in range(self.__width):
                 print('#', end="")
             print()
 
     def __str__(self):
+        """string format"""
         my_str = "[" + str(self.__class__.__name__) + "] "
         my_str += "(" + str(self.id) + ") " + str(self.__x) + "/" + str(self.__y)
         my_str += " - " + str(self.__width) + "/" + str(self.__height)
