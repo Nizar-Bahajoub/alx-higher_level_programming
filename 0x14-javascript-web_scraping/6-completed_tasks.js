@@ -10,7 +10,7 @@ request(url, function (error, response, body) {
     return;
   }
 
-  data = JSON.parse(body);
+  const data = JSON.parse(body);
 
   const completed = {};
 
