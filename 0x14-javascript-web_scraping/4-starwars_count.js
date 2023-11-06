@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 
-const url = `${process.argv[2]}/people/18`;
+const url = process.argv[2];
 
 request(url, function (error, response, body) {
   if (error) {
@@ -9,6 +9,18 @@ request(url, function (error, response, body) {
     return;
   }
 
-  const filmdata = JSON.parse(body);
-  console.log(filmdata.films.length);
+  const films = JSON.parse(body).results;
+  let count = 0;
+
+  for (const filmIndex in films) {
+    const filmChars = films[filmIndex].characters;
+
+    for (const charIndex in filmChars) {
+      if (filmChars[charIndex].includes('18')) {
+        count++;
+      }
+    }
+  }
+
+  console.log(count);
 });
