@@ -4,28 +4,28 @@ const request = require('request');
 
 const url = process.argv[2];
 
-request (url, function (error, response, body) {
-	if (error) {
-		console.log(error);
-		return;
-	}
+request(url, function (error, response, body) {
+  if (error) {
+    console.log(error);
+    return;
+  }
 
-	data = JSON.parse(body);
+  data = JSON.parse(body);
 
-	const completed = {};
+  const completed = {};
 
-	data.forEach((task) => {
-		if (!task.completed) {
-			return;
-		}
-		const userId = task.userId;
+  data.forEach((task) => {
+    if (!task.completed) {
+      return;
+    }
+    const userId = task.userId;
 
-		if (completed[userId]) {
-			completed[userId]++;
-		} else {
-			completed[userId] = 1;
-		}
-	});
+    if (completed[userId]) {
+      completed[userId]++;
+    } else {
+      completed[userId] = 1;
+    }
+  });
 
-	console.log(completed);
+  console.log(completed);
 });
